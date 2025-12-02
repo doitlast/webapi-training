@@ -4,6 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+//builder.Services.AddCors();
+
+builder.Services.AddCors(options => { options.AddPolicy("MyAllowSpecificOrigins", policy => { policy.WithOrigins("http://localhost:3000", "http://www.contoso.com") .AllowAnyHeader() .AllowAnyMethod(); }); });
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -14,7 +18,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseCors("MyAllowSpecificOrigins");
 // var summaries = new[]
 // {
 //     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
