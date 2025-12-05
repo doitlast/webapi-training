@@ -28,5 +28,6 @@ COPY --from=build-env /app/out ./
 EXPOSE 80
 
 #RUN chmod a+x ProductApi.dll
-# Specify the entry point of the application
-ENTRYPOINT ["dotnet", "ProductApi.dll"] # Replace ProductApi with your project's name
+# Specify the entry point of the application,  Replace ProductApi with your project's name
+
+ENTRYPOINT ["dotnet", "ProductApi.dll"] 
