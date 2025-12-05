@@ -6,7 +6,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 //builder.Services.AddCors();
 
-builder.Services.AddCors(options => { options.AddPolicy("MyAllowSpecificOrigins", policy => { policy.WithOrigins("http://localhost:3000", "http://www.contoso.com") .AllowAnyHeader() .AllowAnyMethod(); }); });
+builder.Services.AddCors(options => { options.AddPolicy("MyAllowSpecificOrigins", policy => { policy.WithOrigins("http://localhost:3000", "http://localhost:8090") .AllowAnyHeader() .AllowAnyMethod(); }); });
  
 var app = builder.Build();
 

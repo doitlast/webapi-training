@@ -12,7 +12,8 @@ namespace MyWebApi.Controllers
         private static readonly List<Product> _products = new List<Product> {
         new Product { Id = 1, Name = "Laptop", Price = 1200.00 },
         new Product { Id = 2, Name = "Mouse", Price = 25.00 },
-        new Product { Id = 3, Name = "Keyboard", Price = 75.00 }
+        new Product { Id = 3, Name = "Keyboard", Price = 75.00 },
+        new Product { Id = 4, Name = "Keyboard wireless", Price = 175.00 }
         };
 
         // GET: api/Products
